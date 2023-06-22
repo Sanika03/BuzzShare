@@ -11,7 +11,7 @@ import { Signup } from "../pages/auth/signup";
 // components
 import { PrivateRoute } from "./privateRoute";
 import { ScrollToTop } from "../component/scrollToTop";
-import { SinglePost } from "../pages/singlePost";
+import { SinglePost } from "../component/singlePost";
 import { useAuth } from "../contexts/authContext";
 
 export const AppRoutes = () => {
