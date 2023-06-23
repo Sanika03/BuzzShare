@@ -3,7 +3,7 @@
   "name": "BuzzShare",
   "icons": [
     {
-      "src": "logo192.png",
+      "src" : "https://res.cloudinary.com/dnagcmyka/image/upload/v1687499676/BuzzShare_2_eosvva.png",
       "type": "image/png",
       "sizes": "192x192"
     }
