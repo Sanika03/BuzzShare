@@ -14,15 +14,15 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 1rem 0;
+  gap: 10px;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
   text-decoration: none;
   color: white;
-  margin-bottom: 1.5rem;
+  padding: 0.7rem 0.9rem;
 }
 
 .icon {
@@ -47,6 +47,7 @@
 
 .user-profile {
   margin-top: auto;
+  margin-bottom: 0px;
 }
 
 .user-avatar {
@@ -63,10 +64,20 @@
   padding: 0.5rem;
 }
 
+.logout-btn:hover {
+  background-color: #171e35;
+  color: white;
+}
+
 .user-details-container {
   display: flex;
   flex-direction: column;
-  padding: 0 0.5rem;
+  padding: 0 0.5rem;  
+}
+
+.user-profile:hover, .nav-link:hover {
+  background-color: #171e35;
+  border-radius: 2rem;
 }
 
 .user-details {
