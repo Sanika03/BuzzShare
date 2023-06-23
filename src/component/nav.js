@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faCompass, faBookmark } from '@fortawesome/free-solid-svg-icons';
@@ -16,11 +16,6 @@ const activeStyle = {
 
 export const Nav = () => {
   const {currUser} = useAuth();
-  const location = useLocation();
-
-  const isActiveRoute = (path) => {
-    return location.pathname === path;
-  };
   
   const getTitle = () => <div className="app-heading">
     <img src="https://res.cloudinary.com/dnagcmyka/image/upload/v1687499676/BuzzShare_2_eosvva.png" className="app-logo" alt="App logo"/>
