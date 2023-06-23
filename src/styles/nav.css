@@ -1,0 +1,25 @@
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 85vh;
+  margin-left: 1.5rem;
+  padding-top: 2.5rem;
+  padding-left: 4rem;
+}
+
+.app-heading {
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+.app-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.app-title {
+  font-size: large;
+  margin: 0;
+  padding-left: 0.5rem;
+}
