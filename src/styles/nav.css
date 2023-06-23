@@ -8,6 +8,26 @@
   padding-left: 4rem;
 }
 
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
 .app-heading {
   display: flex;
   padding-bottom: 1rem;
@@ -22,4 +42,12 @@
   font-size: large;
   margin: 0;
   padding-left: 0.5rem;
+}
+
+.logout-btn {
+  width: 70%;
+  background-color: #98c1d9;
+  color: #171e35;
+  border: #171e35 2px solid;
+  padding: 0.5rem;
 }
