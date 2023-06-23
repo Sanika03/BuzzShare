@@ -15,7 +15,9 @@ const activeStyle = {
 };
 
 export const Nav = () => {
-  const {currUser} = useAuth();
+  const {currUser, logoutHandler} = useAuth();
+
+  const handleLogout = () => logoutHandler();
   
   const getTitle = () => <div className="app-heading">
     <img src="https://res.cloudinary.com/dnagcmyka/image/upload/v1687499676/BuzzShare_2_eosvva.png" className="app-logo" alt="App logo"/>
@@ -35,7 +37,7 @@ export const Nav = () => {
       <FontAwesomeIcon icon={faBookmark} className="icon"/>
       Bookmarks
     </NavLink>
-    <button className="logout-btn">Logout</button>
+    <button onClick={() => handleLogout()}  className="logout-btn">Logout</button>
   </div>
 
   const getProfileLink = () => <div className="user-profile">
