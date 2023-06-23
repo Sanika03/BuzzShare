@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import "../../styles/login.css"
+import "../../styles/login.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -50,12 +50,12 @@ export const Login = () => {
     <form onSubmit={(e) => handleUserLogin(e)} className="login-page">
       <h3 className="login-head">Sign In</h3>
       <label>
-        Username address{" "}
+        Username{" "}
         <input
           className="auth-input"
           type="text"
           required
-          placeholder="Username"
+          placeholder="username"
           value={loginData?.username}
           onChange={(e) =>
             setLoginData({ ...loginData, username: e.target.value })
