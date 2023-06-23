@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 85vh;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 2.5rem;
   padding-top: 2.5rem;
   padding-left: 4rem;
 }
@@ -44,10 +45,35 @@
   padding-left: 0.5rem;
 }
 
+.user-profile {
+  margin-top: auto;
+}
+
+.user-avatar {
+  width: 3rem;
+  border-radius: 2rem;
+}
+
 .logout-btn {
   width: 70%;
   background-color: #98c1d9;
   color: #171e35;
   border: #171e35 2px solid;
+  border-radius: 1rem;
   padding: 0.5rem;
+}
+
+.user-details-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.user-details {
+  margin: 0;
+}
+
+.user-details-username {
+  margin: 0;
+  color: rgb(163, 160, 160);
 }
