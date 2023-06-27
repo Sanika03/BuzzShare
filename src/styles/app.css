@@ -1,31 +1,9 @@
 body {
-    background-color: #0c4c7e;
-    color: white;
+  background-color: #0c4c7e;
+  color: white;
 }
 
 .App {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.main-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 20px;
-}
-
-.left-section {
-  flex-basis: 20%;
-}
-
-.middle-section {
-  flex-basis: 60%;
-}
-
-.right-section {
-  flex-basis: 20%;
 }
