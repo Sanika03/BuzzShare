@@ -1,7 +1,14 @@
+import { Nav } from "../component/nav";
+import { SuggestedUsers } from "../component/suggestedUsers";
+
 export const UserProfile = () => {
     return (
-        <>
-            This is UserProfile
-        </>
+        <div>
+            <Nav />
+                
+            This is Profile
+            
+            <SuggestedUsers />
+        </div>
     )
 }
