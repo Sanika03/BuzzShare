@@ -1,7 +1,14 @@
+import { Nav } from "../component/nav";
+import { SuggestedUsers } from "../component/suggestedUsers";
+
 export const Explore = () => {
     return (
-        <div style={{margin: "5rem"}}>
+        <div>
+            <Nav />
+
             This is Explore
+            
+            <SuggestedUsers />
         </div>
     )
 }
