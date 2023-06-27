@@ -42,7 +42,7 @@ export const Login = () => {
 
   useEffect(() => {
     if (token) {
-      navigate(location?.state?.from.pathname, { replace: true });
+      navigate("/", { replace: true });
     }
   }, [token, location, navigate]);
 
