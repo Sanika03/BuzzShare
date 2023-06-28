@@ -1,0 +1,50 @@
+#s-users-container {
+    background-color: #171e35;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+}
+
+#single-s-user-container {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 0;
+}
+
+.s-user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 1.5rem;
+}
+
+.user-details-container {
+    flex-grow: 1;
+}
+
+.s {
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+}
+
+.bold {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+}
+
+.follow-btn {
+    background-color: #98c1d9;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    margin-left: 0.3rem;
+}
+
+.follow-btn:hover { 
+    opacity: 0.5;
+}
+
+#single-s-user-container:hover {
+    cursor: pointer;
+}
