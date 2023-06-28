@@ -3,12 +3,11 @@
   flex-direction: column;
   min-height: 90vh;
   justify-content: space-between;
-  padding-right: 2rem;
   width: max-content;
   margin-left: 1rem;
   margin-right: 2.5rem;
   padding-top: 2.5rem;
-  padding-left: 4rem; 
+  padding-left: 2rem; 
 }
 
 .nav-container {
