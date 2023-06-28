@@ -19,7 +19,7 @@ export const SuggestedUsers = () => {
                 <p className="user-details s">{user?.firstName} {user?.lastName}</p>
                 <p className="user-details-username s">@{user?.username}</p>
             </div>
-                <div className="lala"><button className="follow-btn">Follow</button></div>
+            <button className="follow-btn">Follow</button>
         </div>)}
     </div>
 
