@@ -54,7 +54,7 @@ export const SuggestedUsers = () => {
             </p>
             <p className="user-details-username s">@{user?.username}</p>
           </div>
-          <button onClick={(e) => handleFollow(e, user._id)} className="follow-btn">
+          <button onClick={(e) => handleFollow(e, user._id)} className="light-btn">
             Follow
           </button>
         </div>
