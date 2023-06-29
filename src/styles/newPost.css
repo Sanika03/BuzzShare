@@ -1,6 +1,7 @@
 .add-post-container {
     background-color: #1d2643;
     padding: 1rem 1rem;
+    border-bottom: 1px solid white;
 }
 
 .post-input {
