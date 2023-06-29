@@ -60,8 +60,8 @@
   width: 70%;
   background-color: #98c1d9;
   color: #171e35;
-  border: #171e35 2px solid;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
+  border: none;
   padding: 0.5rem;
 }
 
