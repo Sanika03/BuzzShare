@@ -3,6 +3,7 @@ import React from "react";
 import { Nav } from "../component/nav";
 import { SuggestedUsers } from "../component/suggestedUsers";
 import { NewPost } from "../component/newPost";
+import { SortPosts } from "../component/sort";
 
 import "../styles/home.css";
 
@@ -20,6 +21,7 @@ export const Home = () => {
             {getTitle()}
             <div className="sub-containers">
                 <NewPost />
+                <SortPosts/>
             </div>
         </div>
         <SuggestedUsers />
