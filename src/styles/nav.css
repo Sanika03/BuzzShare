@@ -5,7 +5,7 @@
   justify-content: space-between;
   width: max-content;
   margin-left: 1rem;
-  margin-right: 2.5rem;
+  margin-right: 1.5rem;
   padding-top: 2.5rem;
   padding-left: 2rem; 
 }
@@ -48,7 +48,7 @@
 
 .user-profile {
   margin-top: auto;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 .user-avatar {
