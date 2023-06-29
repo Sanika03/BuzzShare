@@ -98,9 +98,9 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Olivia",
-    lastName: "Garcia",
-    userName: "olivia3103",
+    firstName: "Ava",
+    lastName: "Patel",
+    username: "ava3103",
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289987/39550_ib1rq9.jpg",
     comments: [
       {
