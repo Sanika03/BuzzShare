@@ -87,7 +87,15 @@
 .post-buttons {
     display: flex;
     justify-content: flex-end;
-}   
+    gap: 1rem;
+}  
+
+.upload-button {
+    background-color: #1d2643;
+    border: none;
+    font-size: 23px;
+    color: white;
+}
 
 .posted-media {
     position: relative;
