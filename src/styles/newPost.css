@@ -1,0 +1,83 @@
+.add-post-container {
+    background-color: #1d2643;
+    padding: 1rem 1rem;
+}
+
+.post-input {
+    background-color: #1d2643;
+    color: white;
+    width: 100%;
+    height: auto;
+    min-height: 5rem;
+    height: max-content;
+    border: none;
+    margin: 0.5rem 0;
+    outline: none;
+    resize: none;
+  }
+
+.post-input:focus {
+    color: white;
+}
+
+.post-input::placeholder {
+    color: rgb(163, 160, 160);
+}
+
+.post-input::-webkit-scrollbar-thumb {
+    background: rgb(163, 160, 160);
+    border-radius: 0.25rem;
+  }
+
+.hidden-button  {
+  display: none;
+}
+
+.poster-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+}
+
+.horizontal {
+    display: flex;
+    gap: 1rem;
+    height: max-content;
+}
+
+.post-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}  
+
+.upload-button {
+    background-color: #1d2643;
+    border: none;
+    font-size: 23px;
+    color: white;
+}
+
+.posted-media {
+    position: relative;
+}
+
+#post-image {
+    width: 90%;
+    border-radius: 1rem;
+    margin-left: 3.5rem;
+}
+
+.remove-image-button {
+    position: absolute;
+    top: 0.5rem;
+    left: 4rem;
+    font-size: 16px;
+    background-color: black;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
