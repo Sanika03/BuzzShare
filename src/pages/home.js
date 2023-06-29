@@ -5,9 +5,11 @@ import { Nav } from "../component/nav";
 import { SuggestedUsers } from "../component/suggestedUsers";
 import { useAuth } from "../contexts/authContext";
 import "../styles/home.css";
+import { usePost } from "../contexts/postContext";
 
 export const Home = () => {
-    const { currUser } = useAuth();
+    const { currUser, token } = useAuth();
+    const { addPostHandler } = usePost();
     const [input, setInput] = useState("");
     const [image, setImage] = useState(null);
     const fileInputRef = useRef(null);
@@ -36,6 +38,9 @@ export const Home = () => {
 
     const handlePost = (e) => {
         e.preventDefault();
+        addPostHandler(input, image, token, currUser);
+        setInput("");
+        setImage(null);
     };
 
     const getTitle = () => (
@@ -78,7 +83,7 @@ export const Home = () => {
                     accept="image/*"
                     onChange={handleFileInputChange}
                 />
-                <button type="submit" className="post-button" disabled={input || image ? false : true }>
+                <button type="submit" className="light-btn" disabled={input || image ? false : true }>
                     Post
                 </button>
                 </div>
