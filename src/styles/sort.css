@@ -1,0 +1,26 @@
+.sort-filter-container {
+    justify-content: stretch;
+    background-color: #171e35;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid white;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-option {
+    flex: 1;
+    font-size: 16px;
+    color: white;
+    border: none;
+    background-color: #171e35;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.selected {
+    background-color: #2a3761;
+}
