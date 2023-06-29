@@ -5,6 +5,7 @@ const PostContext = createContext();
 
 const PostProvider = ({children}) => {
     const [ posts, setPosts ] = useState([]);
+    const [selectedOption, setSelectedOption] = useState("Latest");
 
     console.log(posts)
 
@@ -37,7 +38,7 @@ const PostProvider = ({children}) => {
     }, [])
 
     return (
-        <PostContext.Provider value={{ posts, addPostHandler }}>
+        <PostContext.Provider value={{ posts, addPostHandler, selectedOption, setSelectedOption }}>
             {children}
         </PostContext.Provider>
     )
