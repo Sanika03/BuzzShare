@@ -33,7 +33,7 @@
     margin: 0 0 1rem 0;
 }
 
-.follow-btn {
+.light-btn {
     background-color: #98c1d9;
     border: none;
     border-radius: 1rem;
@@ -41,7 +41,7 @@
     margin-left: 0.3rem;
 }
 
-.follow-btn:hover { 
+.light-btn:hover { 
     opacity: 0.5;
 }
 
