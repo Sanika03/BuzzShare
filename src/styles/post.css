@@ -22,3 +22,20 @@
 .date {
     color: rgb(163, 160, 160);
 }
+
+.post-action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.7rem 3.5rem 0rem 3.5rem;
+}
+
+.post-action-icon {
+    font-size: 20px;
+    color: #b6d7ea;
+}
+
+.post-action {
+    display: flex;
+    gap: 0.7rem;
+    color: #b6d7ea;
+}
