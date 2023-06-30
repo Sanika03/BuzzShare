@@ -11,7 +11,7 @@ export const posts = [
     _id: uuid(),
     content:
       "useContext (React hook) helps access global data without having to pass props again and again (prop drilling) within the same file-based React application.",
-    media: "",
+    postImage: "",
     likes: {
       likeCount: 2,
       likedBy: [],
@@ -51,7 +51,7 @@ export const posts = [
     _id: uuid(),
     content:
       "Went for an amazing trek today. It was really refreshing!",
-    media: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687260425/mountain_pg1ozy.jpg",
+    postImage: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687260425/mountain_pg1ozy.jpg",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -92,7 +92,7 @@ export const posts = [
     _id: uuid(),
     content:
       "Exploring the vibrant streets of Tokyo, a city bustling with life and endless energy. Amidst the neon lights and crowded sidewalks, there's a hidden gem for food lovers. Don't miss out on the mouthwatering delicacies at @sushi_sensations, tucked away in the heart of Shibuya. Savor the flavors and experience a culinary adventure like no other.",
-    media: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687260573/tokyo_lbfzqm.png",
+    postImage: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687260573/tokyo_lbfzqm.png",
     likes: {
       likeCount: 8,
       likedBy: [],
@@ -133,7 +133,7 @@ export const posts = [
     _id: uuid(),
     content:
       "Need a feel-good movie recommendation? Give 'The Intern' a watch for a heartwarming story and great performances. It's a delightful film that'll brighten up your day! ",
-    media: "",
+    postImage: "",
     likes: {
       likeCount: 4,
       likedBy: [],
@@ -173,7 +173,7 @@ export const posts = [
   {
     _id: uuid(),
     content: "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. - Christian D. Larson",
-    media: "",
+    postImage: "",
     likes: {
       likeCount: 11,
       likedBy: [],
@@ -213,7 +213,7 @@ export const posts = [
     _id: uuid(),
     content:
       "JavaScript: the language that brings web pages to life! With its versatility and interactivity, it's no wonder why it's a favorite among developers. From dynamic animations to powerful web applications, JavaScript empowers creativity and innovation.",
-    media: "",
+    postImage: "",
     likes: {
       likeCount: 14,
       likedBy: [],
@@ -254,7 +254,7 @@ export const posts = [
     _id: uuid(),
     content:
       "Solving errors on a nice breezy day. How's your day going?",
-    media: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687262562/error_tfmquj.jpg",
+    postImage: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687262562/error_tfmquj.jpg",
     likes: {
       likeCount: 8,
       likedBy: [],
@@ -295,7 +295,7 @@ export const posts = [
     _id: uuid(),
     content:
       "DID YOU KNOW? When a MicroTask is created and another microtask is created inside it and another one in it and so on, then the callback queue never gets a chance to be executed and then the call stack goes into starvation.",
-    media: "",
+    postImage: "",
     likes: {
       likeCount: 3,
       likedBy: [],
