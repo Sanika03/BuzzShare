@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { createPostService, getAllPostsService, likePostService } from "../services/postServices"
+import { createPostService, getAllPostsService, likePostService, dislikePostService } from "../services/postServices"
 
 const PostContext = createContext();
 
@@ -43,12 +43,24 @@ const PostProvider = ({children}) => {
         }
     }
 
+    const dislikePostHandler = async ({_id, token}) => {
+        try {
+            const {data: { posts }, status} = await dislikePostService({_id, token});
+            if(status === 201) {
+                setPosts(posts);
+            }
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+
     useEffect(() => {
         getPostsHandler();
     }, [])
 
     return (
-        <PostContext.Provider value={{ postData, addPostHandler, selectedOption, setSelectedOption, likePostHandler }}>
+        <PostContext.Provider value={{ postData, addPostHandler, selectedOption, setSelectedOption, likePostHandler, dislikePostHandler }}>
             {children}
         </PostContext.Provider>
     )
