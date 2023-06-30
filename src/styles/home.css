@@ -12,7 +12,7 @@
 }
 
 .home-container::-webkit-scrollbar, .post-input::-webkit-scrollbar {
-  width: 0.4rem;
+  width: 0rem;
 }
 
 .home-container::-webkit-scrollbar-track, .post-input::-webkit-scrollbar-track {
