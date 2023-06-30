@@ -39,7 +39,7 @@ export const NewPost = () => {
 
     const handlePost = (e) => {
         e.preventDefault();
-        addPostHandler(input, image, token, currUser);
+        addPostHandler({input, image, token, currUser});
         setInput("");
         setImage(null);
     };
