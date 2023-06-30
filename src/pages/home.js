@@ -11,7 +11,7 @@ import { usePost } from "../contexts/postContext";
 import { useAuth } from "../contexts/authContext";
 
 export const Home = () => {
-    const { posts } = usePost();
+    const { postData } = usePost();
     const { currUser } = useAuth();
 
     const getTitle = () => (
@@ -22,7 +22,7 @@ export const Home = () => {
 
     const getPosts = () => {
         const followingUsernames = currUser.following.map((user) => user.username);
-        const homePosts = posts.filter((post) => {
+        const homePosts = postData.filter((post) => {
           return followingUsernames.includes(post.username) || post.username === currUser.username;
         });
       
