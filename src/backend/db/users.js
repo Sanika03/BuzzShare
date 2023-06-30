@@ -15,6 +15,7 @@ export const users = [
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290002/Children_avatars_01Un_15_d8ahbg.jpg",
     bio: "Hey! Sanika here",
     website: "",
+    bookmarks: [],
     followers: [
       {
         _id: uuid(),
@@ -66,6 +67,7 @@ export const users = [
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290014/39547_kmyvnn.jpg",
     bio: "Hey! Emily here",
     website: "",
+    bookmarks: [],
     followers: [
       {
         _id: uuid(),
@@ -117,6 +119,7 @@ export const users = [
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289094/60111_oliiv2.jpg",
     bio: "Hey! Benjamin here",
     website: "",
+    bookmarks: [],
     followers: [
       {
         _id: uuid(),
@@ -168,6 +171,7 @@ export const users = [
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289969/39548_vclqqg.jpg",
     bio: "Hey! Ava here",
     website: "",
+    bookmarks: [],
     followers: [
       {
         _id: uuid(),
@@ -219,6 +223,7 @@ export const users = [
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289188/832_ejd4g7.jpg",
     bio: "Hey! Caleb here",
     website: "",
+    bookmarks: [],
     followers: [
       {
         _id: uuid(),
@@ -270,6 +275,7 @@ export const users = [
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290411/39551_xgxenv.jpg",
     bio: "Hey! Sophia here",
     website: "",
+    bookmarks: [],
     followers: [
       {
         _id: uuid(),
@@ -321,6 +327,7 @@ export const users = [
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289356/57854_ng7chz.jpg",
     bio: "Hey! Isaac here",
     website: "",
+    bookmarks: [],
     followers: [
       {
         _id: uuid(),
@@ -372,6 +379,7 @@ export const users = [
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289987/39550_ib1rq9.jpg",
     bio: "Hey! Olivia here",
     website: "",
+    bookmarks: [],
     followers: [
       {
         _id: uuid(),
@@ -423,6 +431,7 @@ export const users = [
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289464/828_etzai0.jpg",
     bio: "Hey! Elijah here",
     website: "",
+    bookmarks: [],
     followers: [
       {
         _id: uuid(),
