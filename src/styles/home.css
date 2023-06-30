@@ -11,7 +11,7 @@
     border-right: 1px solid white;
 }
 
-.home-container::-webkit-scrollbar, .post-input::-webkit-scrollbar {
+.home-container::-webkit-scrollbar {
   width: 0rem;
 }
 
