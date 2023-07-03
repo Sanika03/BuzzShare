@@ -44,6 +44,27 @@ export const Post = ({ post }) => {
       month: "long",
       day: "numeric",
     });
+    
+    const isVideo = (media) => {
+      const videoExtensions = ["mp4", "avi", "mov", "mkv"];
+      const extension = media.split(".").pop().toLowerCase();
+      return videoExtensions.includes(extension);
+    }
+
+    const renderMedia = () => {
+      if (postImage && isVideo(postImage)) {
+        return (
+          <video controls className="post-image" onClick={(e) => { e.stopPropagation() }}>
+            <source src={post.postImage} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        );
+      } else if (postImage) {
+        return <img src={postImage} alt="Post" className="post-image" onClick={(e) => { e.stopPropagation() }} />;
+      } else {
+        return null;
+      }
+    };
 
     const handleNavToProfile = (e) => {
       e.stopPropagation();
@@ -132,7 +153,7 @@ export const Post = ({ post }) => {
           </div>
         </div>
         <p className="post-text">{content}</p>
-        {postImage && <img src={postImage} alt="Post" className="post-image" />}
+        {renderMedia()}
         <div className="post-action-buttons">
           {likes && (
             likes.likedBy.some((user) => user.username === currUser.username) ? (
@@ -193,8 +214,6 @@ export const Post = ({ post }) => {
         </div>
         <EditModal 
         individualPost={individualPost}
-        // content={content}
-        // postImage={postImage}
         editModalOpen={editModalOpen}
         setEditModalOpen={setEditModalOpen}
         setOptionsOpen={setOptionsOpen} />
