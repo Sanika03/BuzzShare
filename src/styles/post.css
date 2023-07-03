@@ -2,7 +2,9 @@
     border-bottom: 1px solid white;
     padding: 1rem;
     background-color: #171e35;
-}
+    position: relative;
+    cursor: pointer;
+}                                                                                                                                                                                                                                                                                           
 
 .post-text {
     padding: 0.5rem 3.5rem;
@@ -38,4 +40,54 @@
     display: flex;
     gap: 0.7rem;
     color: #b6d7ea;
+}
+
+.post-action-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.light {
+    color: white;
+    margin-right: 0.5rem;
+}
+
+.action-option-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.options-box {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;   
+    z-index: 1;
+    border-radius: 0.5rem;
+}
+
+.options-box button {
+    font-size: 15px;
+    text-align: left;
+    background-color: #2a3761;
+    border: none;
+    color: white;
+    padding: 0.5rem 0.7rem;
+    cursor: pointer;
+}
+
+.options-box button:hover {
+    background-color: #222c4e;  
+}
+
+.edit {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.delete {
+    border-radius: 0 0 0.5rem 0.5rem;
 }
