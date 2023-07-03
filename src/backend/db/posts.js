@@ -139,10 +139,10 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Sanika",
-    lastName: "Suryawanshi",
-    username: "sanika3103",
-    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290002/Children_avatars_01Un_15_d8ahbg.jpg",
+    firstName: "Olivia",
+    lastName: "Garcia",
+    username: "olivia3103",
+    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289987/39550_ib1rq9.jpg",
     comments: [
       {
         _id: uuid(),
@@ -260,10 +260,10 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Olivia",
-    lastName: "Garcia",
-    username: "olivia3103",
-    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289987/39550_ib1rq9.jpg",
+    firstName: "Sanika",
+    lastName: "Suryawanshi",
+    username: "sanika3103",
+    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290002/Children_avatars_01Un_15_d8ahbg.jpg",
     comments: [
       {
         _id: uuid(),
