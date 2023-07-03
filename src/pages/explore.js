@@ -26,9 +26,7 @@ export const Explore = () => {
             <Nav />
             <div className="explore-container">
                 {getTitle()}
-                <div className="sub-containers">
-                    {getExplorePosts()}
-                </div>
+                {getExplorePosts()}
             </div>
             <SuggestedUsers />
         </div>

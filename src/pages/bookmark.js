@@ -25,9 +25,7 @@ export const Bookmark = () => {
             <Nav />
             <div className="bookmarks-container">
                 {getTitle()}
-                <div className="sub-containers">
-                    {bookmarks.length > 0 ? getBookmarkedPosts() : <h3 className="center">No Bookmarks</h3>}
-                </div>
+                {bookmarks.length > 0 ? getBookmarkedPosts() : <h3 className="center">No Bookmarks</h3>}
             </div>
             <SuggestedUsers />
         </div>

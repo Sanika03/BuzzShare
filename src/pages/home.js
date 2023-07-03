@@ -47,11 +47,9 @@ export const Home = () => {
           <Nav />
           <div className="home-container">
               {getTitle()}
-              <div className="sub-containers">
-                  <NewPost />
-                  <SortPosts />
-                  {postData && getPosts()}
-              </div>
+              <NewPost />
+              <SortPosts />
+                {postData && getPosts()}
           </div>
           <SuggestedUsers />
       </div>
