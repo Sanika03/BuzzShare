@@ -44,7 +44,7 @@ export const posts = [
         updatedAt: formatDate(),
       },
     ],
-    createdAt: formatDate(),
+    createdAt: "2023-06-04T10:06:52+05:30",
     updatedAt: formatDate(),
   },
   {
@@ -85,7 +85,7 @@ export const posts = [
         updatedAt: formatDate(),
       },
     ],
-    createdAt: formatDate(),
+    createdAt: "2023-06-26T10:06:52+05:30",
     updatedAt: formatDate(),
   },
   {
@@ -126,7 +126,7 @@ export const posts = [
         updatedAt: formatDate(),
       },
     ],
-    createdAt: formatDate(),
+    createdAt: "2023-05-19T10:06:52+05:30",
     updatedAt: formatDate(),
   },
   {
@@ -141,7 +141,7 @@ export const posts = [
     },
     firstName: "Sanika",
     lastName: "Suryawanshi",
-    userName: "sanika3103",
+    username: "sanika3103",
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290002/Children_avatars_01Un_15_d8ahbg.jpg",
     comments: [
       {
@@ -167,7 +167,7 @@ export const posts = [
         updatedAt: formatDate(),
       },
     ],
-    createdAt: formatDate(),
+    createdAt: "2023-05-09T10:06:52+05:30",
     updatedAt: formatDate(),
   },
   {
@@ -206,7 +206,7 @@ export const posts = [
         updatedAt: formatDate(),
       },
     ],
-    createdAt: formatDate(),
+    createdAt: "2023-04-30T10:06:52+05:30",
     updatedAt: formatDate(),
   },
   {
@@ -247,7 +247,7 @@ export const posts = [
         updatedAt: formatDate(),
       },
     ],
-    createdAt: formatDate(),
+    createdAt: "2023-03-14T10:06:52+05:30",
     updatedAt: formatDate(),
   },
   {
@@ -260,10 +260,10 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Benjamin",
-    lastName: "Hayes",
-    username: "benjamin3103",
-    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289094/60111_oliiv2.jpg",
+    firstName: "Olivia",
+    lastName: "Garcia",
+    username: "olivia3103",
+    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289987/39550_ib1rq9.jpg",
     comments: [
       {
         _id: uuid(),
@@ -288,7 +288,7 @@ export const posts = [
         updatedAt: formatDate(),
       },
     ],
-    createdAt: formatDate(),
+    createdAt: "2023-03-06T10:06:52+05:30",
     updatedAt: formatDate(),
   },
   {
@@ -301,10 +301,10 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
-    firstName: "Sanika",
-    lastName: "Suryawanshi",
-    username: "sanika3103",
-    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290002/Children_avatars_01Un_15_d8ahbg.jpg",
+    firstName: "Isaac",
+    lastName: "Anderson",
+    username: "isaac3103",
+    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289356/57854_ng7chz.jpg",
     comments: [
       {
         _id: uuid(),
@@ -329,7 +329,7 @@ export const posts = [
         updatedAt: formatDate(),
       },
     ],
-    createdAt: formatDate(),
+    createdAt: "2023-02-28T10:06:52+05:30",
     updatedAt: formatDate(),
   },
 ];
