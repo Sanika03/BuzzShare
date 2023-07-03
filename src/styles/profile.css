@@ -58,3 +58,7 @@
 .profile-btn:hover {
     opacity: 0.5;
 }
+
+.small {
+    font-size: 14px;
+}
