@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Modal from 'react-modal';
 
-import { faImage } from "@fortawesome/free-solid-svg-icons";
+import { faImage, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../styles/editModal.css";
@@ -74,7 +74,7 @@ export const EditModal = ({ individualPost, editModalOpen, setEditModalOpen, set
                 {inputImage && (
                 <div className="posted-media">
                     <img src={inputImage} alt="Posted Media" id="post-image"/>
-                    <button className="remove-image-button" onClick={handleClearFileInput}>X</button>
+                    <FontAwesomeIcon icon={faCircleXmark} className="remove-image-button" onClick={handleClearFileInput}/>
                 </div>
                 )}
                 <div className="buttons-container">
