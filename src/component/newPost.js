@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-import { faImage } from "@fortawesome/free-solid-svg-icons";
+import { faImage, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useAuth } from "../contexts/authContext";
@@ -59,7 +59,7 @@ export const NewPost = () => {
                 {image && (
                 <div className="posted-media">
                     <img src={image} alt="Posted Media" id="post-image"/>
-                    <button className="remove-image-button" onClick={handleClearFileInput}>X</button>
+                    <FontAwesomeIcon icon={faCircleXmark} className="remove-image-button" onClick={handleClearFileInput}/>
                 </div>
                 )}  
                 <div className="post-buttons">
