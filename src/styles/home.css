@@ -24,15 +24,13 @@
     padding: 0.8rem 0;
     border-bottom: 1px solid white;
     position: fixed;
-    width: 47%;
-    position: fixed;
+    width: 100%;
+    position: sticky;
+    z-index: 10;
+    top: 0;
     background-color: #171e35;
 }
 
 .text {
     margin: 0;
-}
-
-.sub-containers {
-    margin-top: 3.15rem;
 }
