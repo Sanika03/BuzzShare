@@ -79,10 +79,8 @@ export const UserProfile = () => {
             <Nav />
             <div className="profile-container">
                 {getTitle()}
-                <div className="sub-containers x-gap">
-                    {getUserDetails()}
-                    {getUserPosts()}
-                </div>
+                {getUserDetails()}
+                {getUserPosts()}
             </div>
             <SuggestedUsers />
         </div>
