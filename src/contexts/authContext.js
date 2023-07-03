@@ -33,12 +33,12 @@ const AuthProvider = ({ children }) => {
     setCurrUser(null);
   };
 
-  const signupHandler = async (userName, password, name) => {
+  const signupHandler = async (username, password, name) => {
     try {
       const {
         data: { createdUser, encodedToken },
         status,
-      } = await signUpService({ userName, password, name });
+      } = await signUpService({ username, password, name });
       if (status === 200 || status === 201) {
         localStorage.setItem(
           'loginItems',
@@ -54,7 +54,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ token, loginHandler, currUser, signupHandler, logoutHandler, setCurrUser }}
+      value={{ token, loginHandler, currUser, setCurrUser, signupHandler, logoutHandler  }}
     >
       {children}
     </AuthContext.Provider>
