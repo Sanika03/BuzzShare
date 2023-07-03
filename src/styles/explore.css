@@ -1,0 +1,19 @@
+.explore-page {
+    display: flex;
+}
+
+.explore-container {
+    width: 47%;
+    height: 100vh;
+    overflow-y: auto;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.explore-container::-webkit-scrollbar {
+  width: 0rem;
+}
+
+.explore-container::-webkit-scrollbar-track {
+  background: transparent;
+}
