@@ -61,6 +61,7 @@
 
 #search-bar::placeholder {
     font-size: 15px;
+    font-family: 'Poppins', sans-serif;
     color: rgb(163, 160, 160);
 }
 
