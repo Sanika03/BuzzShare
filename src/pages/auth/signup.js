@@ -65,7 +65,7 @@ export const Signup = () => {
           />
         </label>
         <label>
-          Email address{" "}
+          Username{" "}
           <input
             className="auth-input"
             required
@@ -113,7 +113,7 @@ export const Signup = () => {
               onChange={(e) =>
                 setSignUpData({
                   ...signUpData,
-                  confirmPassword: signUpData.password === e.target.value ? true : false,
+                  confirmPassword: signUpData.password === e.target.value
                 })
               }
             />
