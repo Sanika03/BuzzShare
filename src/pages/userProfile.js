@@ -21,7 +21,7 @@ export const UserProfile = () => {
     const getTitle = () => user && (
         <div className="title-container left">
             <p className="text left-gap">{user.firstName} {user.lastName}</p>
-            <p className="text left-gap">{userPosts.length} Posts</p>
+            <p className="text left-gap user-details-username small">{userPosts.length} Posts</p>
         </div>
     );
 
