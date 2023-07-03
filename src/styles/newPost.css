@@ -28,7 +28,7 @@
 .post-input::-webkit-scrollbar-thumb {
     background: rgb(163, 160, 160);
     border-radius: 0.25rem;
-  }
+}
 
 .hidden-button  {
   display: none;
@@ -53,6 +53,7 @@
 }  
 
 .upload-button {
+    cursor: pointer;
     background-color: #1d2643;
     border: none;
     font-size: 23px;
@@ -73,12 +74,12 @@
     position: absolute;
     top: 0.5rem;
     left: 4rem;
-    font-size: 16px;
-    background-color: black;
-    padding: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    color: #171e35;
     border: none;
-    border-radius: 0.5rem;
-    color: white;
+    border-radius: 1rem;
     font-size: 1rem;
     cursor: pointer;
 }
