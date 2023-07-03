@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body {
   background-color: #0c4c7e;
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .App {
   display: flex;
   flex-direction: column;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
 }
