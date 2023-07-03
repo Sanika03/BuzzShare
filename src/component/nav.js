@@ -10,8 +10,7 @@ import "../styles/nav.css";
 const activeStyle = {
   backgroundColor: "#171e35",
   borderRadius: "2rem",
-  width: "max-content",
-  fontWeight: "bold",
+  width: "max-content"
 };
 
 export const Nav = () => {
