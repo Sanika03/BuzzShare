@@ -1,20 +1,33 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { createPostService, getAllPostsService, likePostService, dislikePostService } from "../services/postServices"
+import { createPostService, getAllPostsService, likePostService, dislikePostService, deletePostService, editPostService, getSingleUserPostsService } from "../services/postServices"
+import { useUser } from "./userContext";
 
 const PostContext = createContext();
 
 const PostProvider = ({children}) => {
     const [ postData, setPosts ] = useState([]);
+    const [userPosts, setUserPosts] = useState([]);
     const [selectedOption, setSelectedOption] = useState("Latest");
+    const { removeBookmarkHandler } = useUser();
 
     const getPostsHandler = async () => {
         try {
-            const {data: { posts }, status} = await getAllPostsService();
-            if(status === 200) {
-                setPosts(posts);
-            }  
+          const { data: { posts }, status } = await getAllPostsService();
+          if (status === 200) {
+            setPosts(posts);
+          }
+        } catch (e) {
+          console.error(e);
         }
-        catch (e) {
+    }
+
+    const getUserPostsHandler = async (username) => {
+        try {
+            const {data: {posts}, status} = await getSingleUserPostsService(username);
+            if (status === 200) {
+                setUserPosts(posts);
+            }
+        } catch (e) {
             console.error(e);
         }
     }
@@ -55,12 +68,37 @@ const PostProvider = ({children}) => {
         }
     }
 
+    const deletePostHandler = async ({_id, token}) => {
+        try {
+            const {data: { posts }, status} = await deletePostService({_id, token});
+            if(status === 201) {
+                setPosts(posts);
+                removeBookmarkHandler(token, _id);
+            }
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+
+    const editPostHandler = async ({ token, postImage, post, input }) => {
+        try {
+            const { data: { posts }, status } = await editPostService({ token, postImage, post, input });
+            if (status === 201) {
+                setPosts(posts)
+            }
+        } catch (e) {
+          console.error(e);
+        }
+      };      
+      
+
     useEffect(() => {
         getPostsHandler();
-    }, [])
+      }, [selectedOption]);
 
     return (
-        <PostContext.Provider value={{ postData, addPostHandler, selectedOption, setSelectedOption, likePostHandler, dislikePostHandler }}>
+        <PostContext.Provider value={{ postData, addPostHandler, selectedOption, setSelectedOption, likePostHandler, dislikePostHandler, deletePostHandler, editPostHandler, getUserPostsHandler, userPosts }}>
             {children}
         </PostContext.Provider>
     )
