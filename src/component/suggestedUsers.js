@@ -2,11 +2,10 @@ import { useUser } from "../contexts/userContext";
 import { useAuth } from "../contexts/authContext";
 import { useState, useEffect } from "react";
 import "../styles/suggestedUsers.css";
-import { followUserService } from "../services/userServices";
 import { useNavigate } from "react-router";
 
 export const SuggestedUsers = () => {
-  const { users } = useUser();
+  const { users, followUserHandler } = useUser();
   const { currUser, token } = useAuth();
   const [suggestedUsers, setSuggestedUsers] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -17,7 +16,7 @@ export const SuggestedUsers = () => {
     return users.filter(
       (user) =>
         user.username !== currUser.username &&
-        !currUser.following.some(
+        !currUser.following?.some(
           (followingUser) => followingUser.username === user.username
         )
     );
@@ -30,7 +29,7 @@ export const SuggestedUsers = () => {
 
   const handleFollow = (e, id) => {
     e.stopPropagation();
-    followUserService({ token, followUserId: id });
+    followUserHandler(token, id);
 
     setSuggestedUsers((prevUsers) =>
       prevUsers.filter((user) => user._id !== id)
