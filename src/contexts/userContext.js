@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getAllUserService, getBookmarkService, removeBookmarkService, addBookmarkService } from "../services/userServices"
+import { getAllUserService, getBookmarkService, removeBookmarkService, addBookmarkService, unfollowUserService, followUserService } from "../services/userServices"
 import { useAuth } from "./authContext";
 
 const UserContext = createContext();
@@ -7,7 +7,7 @@ const UserContext = createContext();
 const UserProvider = ({children}) => {
     const [ users, setUsers ] = useState([]);
     const [ bookmarks, setBookmarks ] = useState([]);
-    const { token } = useAuth();
+    const { token, currUser, setCurrUser } = useAuth();
 
     const getUserHandler = async () => {
         try {
@@ -57,13 +57,57 @@ const UserProvider = ({children}) => {
         }
     }
 
+    const followUserHandler = async (token, _id) => {
+        try {
+          const { data: { user, followUser }, status } = await followUserService({ token, followUserId: _id });
+          if (status === 200) {
+            setUsers((prevUsers) =>
+              prevUsers.map((curr) => {
+                if (curr.username === user.username) {
+                    setCurrUser(user);
+                  return { ...user };
+                } else if (curr.username === followUser.username) {
+                  return { ...followUser };
+                }
+                return curr;
+              })
+            );
+          }
+        } catch (e) {
+          console.error(e);
+        }
+    };      
+
+  
+    const unfollowUserHandler = async (token, _id) => {
+        try {
+            const {data: { user, followUser }, status} = await unfollowUserService({token, followUserId: _id});
+            if (status === 200) {
+                setUsers((prevUsers) =>
+                  prevUsers.map((curr) => {
+                    if (curr.username === user.username) {
+                        setCurrUser(user);
+                        return { ...user };
+                    } else if (curr.username === followUser.username) {
+                        return { ...followUser };
+                    }
+                    return curr;
+                  })
+                );
+            }
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+
     useEffect(() => {
         getUserHandler();
         getBookmarksHandler()
     }, [])
 
     return (
-        <UserContext.Provider value={{ users, bookmarks, addBookmarkHandler, removeBookmarkHandler }}>
+        <UserContext.Provider value={{ users, bookmarks, addBookmarkHandler, removeBookmarkHandler, followUserHandler, unfollowUserHandler }}>
             {children}
         </UserContext.Provider>
     )
