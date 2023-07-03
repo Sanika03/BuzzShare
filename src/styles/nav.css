@@ -5,10 +5,9 @@
   justify-content: space-between;
   align-items: center;
   width: max-content;
-  margin-left: 1rem;
   margin-right: 1.5rem;
   padding-top: 2.5rem;
-  padding-left: 2rem; 
+  padding-left: 1.7rem; 
 }
 
 .nav-container {
@@ -34,6 +33,7 @@
 .app-heading {
   display: flex;
   padding-bottom: 1rem;
+  cursor: pointer;
 }
 
 .app-logo {
@@ -58,6 +58,7 @@
 }
 
 .logout-btn {
+  cursor: pointer;
   width: 70%;
   background-color: #98c1d9;
   color: #171e35;
