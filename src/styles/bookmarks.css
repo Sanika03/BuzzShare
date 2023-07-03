@@ -1,0 +1,24 @@
+.bookmarks-page {
+    display: flex;
+}
+
+.bookmarks-container {
+    width: 47%;
+    height: 100vh;
+    overflow-y: auto;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.bookmarks-container::-webkit-scrollbar {
+  width: 0rem;
+}
+
+.bookmarks-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.center {
+    text-align: center;
+    margin-top: 4rem;
+}
