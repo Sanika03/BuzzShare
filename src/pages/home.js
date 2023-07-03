@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Nav } from "../component/nav";
 import { SuggestedUsers } from "../component/suggestedUsers";
@@ -11,40 +11,49 @@ import { usePost } from "../contexts/postContext";
 import { useAuth } from "../contexts/authContext";
 
 export const Home = () => {
-    const { postData } = usePost();
-    const { currUser } = useAuth();
+  const { postData, selectedOption } = usePost();
+  const { currUser } = useAuth();
 
-    const getTitle = () => (
-        <div className="title-container">
-        <p className="text">Home</p>
-        </div>
-    );
+  const getTitle = () => (
+      <div className="title-container">
+          <p className="text">Home</p>
+      </div>
+  );
 
-    const getPosts = () => {
-        const followingUsernames = currUser.following.map((user) => user.username);
-        const homePosts = postData.filter((post) => {
-          return followingUsernames.includes(post.username) || post.username === currUser.username;
-        });
-      
-        return homePosts.map((post) => (
-          <div className="home-posts-container">
-            <Post post={post} />
+  const followingUsernames = currUser?.following?.map((user) => user.username) || [];
+  const homePosts = postData?.filter((post) => {
+      return followingUsernames.includes(post.username) || post.username === currUser?.username;
+  });
+
+  const filteredPosts = selectedOption === "Trending"
+      ? homePosts?.filter((post) => post.likes.likeCount >= 5).sort((a, b) => b.likes.likeCount - a.likes.likeCount)
+      : homePosts;
+
+  const getPosts = () => {
+      if (selectedOption === "Latest") {
+          filteredPosts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      } else if (selectedOption === "Oldest") {
+          filteredPosts.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+      }
+      return filteredPosts.map((post) => (
+          <div className="posts-container">
+              <Post post={post} />
           </div>
-        ));
-    };
+      ));
+  };
 
-    return (
-        <div className="home-page">
-        <Nav />
-        <div className="home-container">
-            {getTitle()}
-            <div className="sub-containers">
-                <NewPost />
-                <SortPosts/>
-                {getPosts()}
-            </div>
-        </div>
-        <SuggestedUsers />
-        </div>
-    );
+  return (
+      <div className="home-page">
+          <Nav />
+          <div className="home-container">
+              {getTitle()}
+              <div className="sub-containers">
+                  <NewPost />
+                  <SortPosts />
+                  {postData && getPosts()}
+              </div>
+          </div>
+          <SuggestedUsers />
+      </div>
+  );
 };
