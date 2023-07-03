@@ -8,6 +8,10 @@ const getSinglePostService = (postId) => {
   return axios.get(`/api/posts/${postId}`);
 };
 
+const getSingleUserPostsService = (username) => {
+  return axios.get(`/api/posts/user/${username}`)
+}
+
 const createPostService = ({ input,postImage, token, user }) => {
   return axios.post(
     "/api/posts",
@@ -98,4 +102,5 @@ export {
   addCommentService,
   editCommentService,
   deleteCommentService,
+  getSingleUserPostsService
 };
