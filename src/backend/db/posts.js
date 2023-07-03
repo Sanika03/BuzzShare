@@ -31,18 +31,7 @@ export const posts = [
         profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289188/832_ejd4g7.jpg",
         createdAt: formatDate(),
         updatedAt: formatDate(),
-      },
-      {
-        _id: uuid(),
-        comment:
-          "Got to know this today, thanks!",
-        firstName: "Ava",
-        lastName: "Patel",
-        username: "ava3103",
-        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289969/39548_vclqqg.jpg",
-        createdAt: formatDate(),
-        updatedAt: formatDate(),
-      },
+      }
     ],
     createdAt: "2023-06-04T10:06:52+05:30",
     updatedAt: formatDate(),
@@ -51,7 +40,7 @@ export const posts = [
     _id: uuid(),
     content:
       "Went for an amazing trek today. It was really refreshing!",
-    postImage: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687260425/mountain_pg1ozy.jpg",
+    postImage: "https://res.cloudinary.com/dnagcmyka/video/upload/v1688408285/pexels-vanessa-garcia-6319541_2160p_l7dfz8.mp4",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -61,30 +50,7 @@ export const posts = [
     lastName: "Reynolds",
     username: "caleb3103",
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289188/832_ejd4g7.jpg",
-    comments: [
-      {
-        _id: uuid(),
-        comment:
-          "That's great!",
-        firstName: "Sanika",
-        lastName: "Suryawanshi",
-        username: "sanika3103",
-        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290002/Children_avatars_01Un_15_d8ahbg.jpg",
-        createdAt: formatDate(),
-        updatedAt: formatDate(),
-      },
-      {
-        _id: uuid(),
-        comment:
-          "Looks beautiful!",
-        firstName: "Ava",
-        lastName: "Patel",
-        username: "ava3103",
-        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289969/39548_vclqqg.jpg",
-        createdAt: formatDate(),
-        updatedAt: formatDate(),
-      },
-    ],
+    comments: [],
     createdAt: "2023-06-26T10:06:52+05:30",
     updatedAt: formatDate(),
   },
@@ -166,6 +132,17 @@ export const posts = [
         createdAt: formatDate(),
         updatedAt: formatDate(),
       },
+      {
+        _id: uuid(),
+        comment:
+          "Thanks for suggestion!",
+        firstName: "Sanika",  
+        lastName: "Suryawanshi",
+        username: "sanika3103",
+        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290002/Children_avatars_01Un_15_d8ahbg.jpg",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+      }
     ],
     createdAt: "2023-05-09T10:06:52+05:30",
     updatedAt: formatDate(),
@@ -223,30 +200,7 @@ export const posts = [
     lastName: "Hayes",
     username: "benjamin3103",
     profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289094/60111_oliiv2.jpg",
-    comments: [
-      {
-        _id: uuid(),
-        comment:
-          "Indeed.",
-          firstName: "Caleb",
-          lastName: "Reynolds",
-          username: "caleb3103",
-        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289188/832_ejd4g7.jpg",
-        createdAt: formatDate(),
-        updatedAt: formatDate(),
-      },
-      {
-        _id: uuid(),
-        comment:
-          "Agreed, it's great",
-        firstName: "Ava",
-        lastName: "Patel",
-        username: "ava3103",
-        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289969/39548_vclqqg.jpg",
-        createdAt: formatDate(),
-        updatedAt: formatDate(),
-      },
-    ],
+    comments: [],
     createdAt: "2023-03-14T10:06:52+05:30",
     updatedAt: formatDate(),
   },
@@ -254,7 +208,7 @@ export const posts = [
     _id: uuid(),
     content:
       "Solving errors on a nice breezy day. How's your day going?",
-    postImage: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687262562/error_tfmquj.jpg",
+    postImage: "https://res.cloudinary.com/dnagcmyka/image/upload/v1688418108/pexels-tranmautritam-245032_ajhmfz.jpg",
     likes: {
       likeCount: 8,
       likedBy: [],
@@ -309,17 +263,6 @@ export const posts = [
       {
         _id: uuid(),
         comment:
-          "Woah, I got to know about this today.",
-          firstName: "Caleb",
-          lastName: "Reynolds",
-          username: "caleb3103",
-        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289188/832_ejd4g7.jpg",
-        createdAt: formatDate(),
-        updatedAt: formatDate(),
-      },
-      {
-        _id: uuid(),
-        comment:
           "Thanks for sharing!",
         firstName: "Ava",
         lastName: "Patel",
@@ -332,4 +275,90 @@ export const posts = [
     createdAt: "2023-02-28T10:06:52+05:30",
     updatedAt: formatDate(),
   },
+  {
+    _id: uuid(),
+    content:
+      "Excited to share that I've been hired as a Frontend Developer intern at Google! 🎉 Looking forward to this amazing opportunity to learn and contribute to innovative projects. Grateful for the support and guidance that got me here. Let the coding adventures begin!",
+    postImage: "",
+    likes: {
+      likeCount: 9,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    firstName: "Emily",
+    lastName: "Turner",
+    username: "emily3103",
+    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290014/39547_kmyvnn.jpg",
+    comments: [
+      {
+        _id: uuid(),
+        comment: "Congratulations on the great achievement!",
+        firstName: "Ava",
+        lastName: "Patel",
+        username: "ava3103",
+        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289969/39548_vclqqg.jpg",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+      },
+    ],
+    createdAt: "2023-07-04T10:06:52+05:30",
+    updatedAt: formatDate(),
+  },
+  {
+    _id: uuid(),
+    content:
+      "Just had an unforgettable getaway at the Lakeside Haven Resort, nestled right by the tranquil shores of a breathtaking lake. The picturesque views, cozy accommodations, and impeccable hospitality made it a truly remarkable experience. Waking up to the sound of gentle waves and being surrounded by nature's serenity was a dream come true.",
+    postImage: "https://res.cloudinary.com/dnagcmyka/image/upload/v1688413386/hotel_ac5him.jpg",
+    likes: {
+      likeCount: 10,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    firstName: "Elijah",
+    lastName: "Wright",
+    username: "elijah3103",
+    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289464/828_etzai0.jpg",
+    comments: [
+      {
+        _id: uuid(),
+        comment:"Thanks for sharing!",
+        firstName: "Ava",
+        lastName: "Patel",
+        username: "ava3103",
+        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687289969/39548_vclqqg.jpg",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+      },
+      {
+        _id: uuid(),
+        comment: "Thanks for sharing!",
+        firstName: "Sophia",
+        lastName: "Mitchell",
+        username: "sophia3103",
+        profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290411/39551_xgxenv.jpg",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+      }
+    ],
+    createdAt: "2023-02-28T10:06:52+05:30",
+    updatedAt: formatDate(),
+  },
+  {
+    _id: uuid(),
+    content:
+      "Amazed by the profound impact of the subconscious mind! It's fascinating how our thoughts and beliefs shape our reality. Exploring the power within us and unlocking its potential can lead to incredible transformations. Recommend everybody to read 'The Power of your Subconscious Mind.",
+    postImage: "",
+    likes: {
+      likeCount: 4,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    firstName: "Sophia",
+    lastName: "Mitchell",
+    username: "sophia3103",
+    profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1687290411/39551_xgxenv.jpg",
+    comments: [],
+    createdAt: "2023-02-07T10:06:52+05:30",
+    updatedAt: formatDate(),
+  }
 ];
