@@ -1,0 +1,65 @@
+.profile-page {
+    display: flex;
+}
+
+.profile-container {
+    width: 47%;
+    height: 100vh;
+    overflow-y: auto;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.profile-details-container {
+    background-color: #1d2643;
+    padding: 1rem;
+    border-bottom: 1px solid white;
+}
+
+.gap-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.x-gap {
+    margin-top: 4.65rem;
+} 
+
+.left {
+    text-align: left;
+}
+
+.left-gap {
+    margin-left: 2rem;
+}
+
+.s-gap {
+    margin-bottom: 0.7rem;
+}
+
+.profile-avatar {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 5rem;
+}
+
+.profile-container::-webkit-scrollbar {
+    width: 0rem;
+}
+
+.profile-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.profile-btn {
+    height: 2.3rem;
+    padding: 0 1rem;
+    /* margin-left: 4rem; */
+    border: none;
+    border-radius: 1.5rem;
+    background-color: #98c1d9;
+}
+
+.profile-btn:hover {
+    opacity: 0.5;
+}
