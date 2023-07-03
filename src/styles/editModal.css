@@ -1,0 +1,49 @@
+.edit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1d2643;
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content {
+    /* Add your desired styles for the modal content */
+}
+
+.modal-image {
+    width: 20rem;
+    height: 15rem;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-btn {
+    height: 1.7rem;
+    width: 4.5rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.save {
+    background-color: #98c1d9;
+}
+
+.cancel {
+    border: 1.5px solid #98c1d9;
+    background-color: #1d2643;
+    color: white;
+}
