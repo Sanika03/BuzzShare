@@ -51,6 +51,7 @@
 
 #search-bar {
     background-color: #171e35;
+    width: 17rem;
     color: white;
     padding: 1rem 1.5rem;
     margin: 1rem 0 1rem 1.5rem;
@@ -68,7 +69,7 @@
     color: black;
     position: relative;
     height: max-content;
-    width: max-content;
+    width: 15.4rem;
     max-height: 10rem;
     overflow-y: auto;
     margin-top: -28rem;
