@@ -67,7 +67,7 @@ export const UserProfile = () => {
     )
 
     const getUserPosts = () => <div className="user-posts-container">
-        {userPosts.map((post) => <Post post={post}/>)}
+        {userPosts.length > 0 ? userPosts.map((post) => <Post post={post}/>) : <h3 className="center">No posts to show</h3>}
     </div>
 
     useEffect(() => {
