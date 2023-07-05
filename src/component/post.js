@@ -20,7 +20,7 @@ import { useAuth } from "../contexts/authContext";
 import { useUser } from "../contexts/userContext";
 
 import "../styles/post.css";
-import { EditModal } from "./editModal";
+import { EditModal } from "./editPostModal";
 
 export const Post = ({ post }) => {
     const [optionsOpen, setOptionsOpen] = useState(false);
