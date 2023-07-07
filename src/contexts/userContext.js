@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getAllUserService, getBookmarkService, removeBookmarkService, addBookmarkService, unfollowUserService, followUserService } from "../services/userServices"
+import { getAllUserService, getBookmarkService, removeBookmarkService, addBookmarkService, unfollowUserService, followUserService, updateProfileService } from "../services/userServices"
 import { useAuth } from "./authContext";
 
 const UserContext = createContext();
@@ -101,13 +101,32 @@ const UserProvider = ({children}) => {
         }
     }
 
+    const updateProfileHandler = async (editInput, token) => {
+        try {
+            const { data: { user }, status } = await updateProfileService({ editInput, token });
+            if (status === 201) {
+                setUsers(prevUsers => {
+                    return prevUsers.map(curr => {
+                        if (curr.username === user.username) {
+                            return user; // Replace the user with the matching username
+                        } else {
+                            return curr; // Keep the original user if the usernames don't match
+                        }
+                    });
+                });
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    };    
+
     useEffect(() => {
         getUserHandler();
         getBookmarksHandler()
     }, [])
 
     return (
-        <UserContext.Provider value={{ users, bookmarks, addBookmarkHandler, removeBookmarkHandler, followUserHandler, unfollowUserHandler }}>
+        <UserContext.Provider value={{ users, bookmarks, addBookmarkHandler, removeBookmarkHandler, followUserHandler, unfollowUserHandler, updateProfileHandler }}>
             {children}
         </UserContext.Provider>
     )
