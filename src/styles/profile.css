@@ -23,10 +23,7 @@
 
 .left {
     text-align: left;
-}
-
-.left-gap {
-    margin-left: 2rem;
+    padding-left: 2rem;
 }
 
 .s-gap {
