@@ -1,0 +1,50 @@
+.profile-edit {
+    width: 20%;
+    margin-top: 1rem;
+} 
+
+.profile-avatar-edit {
+    border-radius: 3.5rem;
+    width: 5rem;
+    margin-top: 0.5rem;
+}
+
+.sub-input {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    border: 1px solid white;
+    padding: 0.4rem;
+    margin: 0.8rem 0;
+    border-radius: 0.5rem;
+    color: rgb(186, 185, 185);;
+}
+
+.profile-input { 
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding-top: 5px;
+    outline: none;
+}
+
+.save-btn {
+    background-color: #98c1d9;
+}
+
+.cancel-btn {
+    margin-top: 0.3rem;
+}
+
+.save-btn:hover, .cancel-btn:hover {
+    opacity: 0.5;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.start { 
+    display: flex;
+    gap: 1rem;
+}
