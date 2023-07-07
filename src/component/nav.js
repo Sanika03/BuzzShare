@@ -6,6 +6,7 @@ import { faHouse, faCompass, faBookmark } from '@fortawesome/free-solid-svg-icon
 import { useAuth } from "../contexts/authContext";
 
 import "../styles/nav.css";
+import { useUser } from "../contexts/userContext";
 
 const activeStyle = {
   backgroundColor: "#171e35",
@@ -14,9 +15,12 @@ const activeStyle = {
 };
 
 export const Nav = () => {
-  const {currUser, logoutHandler} = useAuth();
+  const { currUser, logoutHandler } = useAuth();
+  const { users } = useUser()
 
   const navigate = useNavigate();
+
+  const user = users?.find((user) => user?.username === currUser?.username)
 
   const handleLogout = () => logoutHandler();
   
@@ -42,11 +46,11 @@ export const Nav = () => {
   </div>
 
   const getProfileLink = () => <div className="user-profile">
-    <NavLink to={`/profile/${currUser?.username}`} className="nav-link" style={({ isActive }) => (isActive ? activeStyle : undefined)}>
-      <img src={currUser?.profileAvatar} alt="User Avatar" className="user-avatar"/>
+    <NavLink to={`/profile/${user?.username}`} className="nav-link" style={({ isActive }) => (isActive ? activeStyle : undefined)}>
+      <img src={user?.profileAvatar} alt="User Avatar" className="user-avatar"/>
       <div className="user-details-container">
-        <p className="user-details">{currUser?.firstName} {currUser?.lastName}</p>
-        <p className="user-details-username">@{currUser?.username}</p>
+        <p className="user-details">{user?.firstName} {user?.lastName}</p>
+        <p className="user-details-username">@{user?.username}</p>
       </div>
     </NavLink>
   </div>
