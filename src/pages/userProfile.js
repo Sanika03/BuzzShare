@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Nav } from "../component/nav";
 import { SuggestedUsers } from "../component/suggestedUsers";
 import { usePost } from "../contexts/postContext";
@@ -8,9 +8,11 @@ import { Post } from "../component/post";
 import { useParams } from "react-router";
 import { useUser } from "../contexts/userContext";
 import { useAuth } from "../contexts/authContext";
+import { EditProfileModal } from "../component/editProfileModal";
 
 export const UserProfile = () => {
     const { username } = useParams();
+    const [ editModalOpen, setEditModalOpen ] = useState(false);
     const { getUserPostsHandler, userPosts } = usePost();
     const { users, followUserHandler, unfollowUserHandler } = useUser(); 
     const { currUser, token } = useAuth(); 
@@ -20,12 +22,10 @@ export const UserProfile = () => {
 
     const getTitle = () => user && (
         <div className="title-container left">
-            <p className="text left-gap">{user.firstName} {user.lastName}</p>
-            <p className="text left-gap user-details-username small">{userPosts.length} Posts</p>
+            <p className="text">{user.firstName} {user.lastName}</p>
+            <p className="text user-details-username small">{userPosts.length} Posts</p>
         </div>
     );
-
-    console.log(currUser)
 
     const isFollowing = () => {
         if (currentUser && user) {
@@ -58,9 +58,10 @@ export const UserProfile = () => {
             </div>
             {
                 currUser.username === user.username ? 
-                <button className="profile-btn">Edit Profile</button> :
+                <button className="profile-btn" onClick={() => setEditModalOpen(true)}>Edit Profile</button> :
                 isFollowing() ? 
-                <button className="profile-btn" onClick={() => followUserHandler(token, user._id)}>Follow</button> : <button className="profile-btn" onClick={() => unfollowUserHandler(token, user._id)}>Unfollow</button>
+                <button className="profile-btn" onClick={() => followUserHandler(token, user._id)}>Follow</button> :
+                <button className="profile-btn" onClick={() => unfollowUserHandler(token, user._id)}>Unfollow</button>
             }
         </div>
     </div>
@@ -72,7 +73,7 @@ export const UserProfile = () => {
 
     useEffect(() => {
         user && getUserPostsHandler(user.username);
-    }, [user, getUserPostsHandler])
+    }, [user])
 
     return (
         <div className="profile-page">
@@ -81,6 +82,7 @@ export const UserProfile = () => {
                 {getTitle()}
                 {getUserDetails()}
                 {getUserPosts()}
+                <EditProfileModal user={user} editModalOpen={editModalOpen} setEditModalOpen={setEditModalOpen} />
             </div>
             <SuggestedUsers />
         </div>
