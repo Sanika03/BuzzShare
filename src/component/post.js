@@ -133,14 +133,17 @@ export const Post = ({ post }) => {
               <span className="date">·</span>
               <p className="text date">{formattedDate}</p>
               <div className="post-action-container">
-                <FontAwesomeIcon
-                  icon={faEllipsis}
-                  className="action-option-icon"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setOptionsOpen(!optionsOpen);
-                  }}
-                />
+                {
+                  currUser.username === username ? 
+                    <FontAwesomeIcon
+                    icon={faEllipsis}
+                    className="action-option-icon"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setOptionsOpen(!optionsOpen);
+                    }}
+                  /> : null
+                }
                 {optionsOpen ? getPostActionBox() : null}
               </div>
             </div>
