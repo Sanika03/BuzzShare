@@ -48,7 +48,18 @@ export const UserProfile = () => {
                     </div>
                     <div className="s-gap">
                         <p className="text s-gap">{user.bio}</p>
-                        {user.website && <p className="s-gap">{user.website}</p>}
+                        {user.website && (
+                            <a
+                                href={user.website.startsWith("http://") || user.website.startsWith("https://")
+                                ? user.website
+                                : `http://${user.website}`}
+                                className="link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {user.website}
+                            </a>
+                        )}
                     </div>
                     <div className="horizontal s-gap">
                         <p className="text">{user.followers.length} <span className="user-details-username">Followers</span></p>
