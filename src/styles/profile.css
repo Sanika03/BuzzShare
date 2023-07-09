@@ -59,3 +59,13 @@
 .small {
     font-size: 14px;
 }
+
+.link {
+    color: #98c1d9;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link:hover { 
+    text-decoration: underline;
+}
