@@ -16,11 +16,12 @@ export const Signup = () => {
   const location = useLocation();
 
   const [signUpData, setSignUpData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     username: "",
     password: "",
     confirmPassword: true,
-  });
+});
 
   const [passwordIsVisible, setPasswordIsVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
@@ -52,15 +53,28 @@ export const Signup = () => {
       <form onSubmit={handleUserSignUp} className="signup-page">
         <h3 className="signup-heading">Sign Up</h3>
         <label>
-          Name{" "}
+          First Name{" "}
           <input
             className="auth-input"
             type="text"
             required
-            placeholder="name"
-            value={signUpData?.name}
+            placeholder="First Name"
+            value={signUpData?.firstName}
             onChange={(e) =>
-              setSignUpData({ ...signUpData, name: e.target.value })
+              setSignUpData({ ...signUpData, firstName: e.target.value })
+            }
+          />
+        </label>
+        <label>
+          Last Name{" "}
+          <input
+            className="auth-input"
+            type="text"
+            required
+            placeholder="Last Name"
+            value={signUpData?.lastName}
+            onChange={(e) =>
+              setSignUpData({ ...signUpData, lastName: e.target.value })
             }
           />
         </label>
@@ -70,7 +84,7 @@ export const Signup = () => {
             className="auth-input"
             required
             type="text"
-            placeholder="username"
+            placeholder="Username"
             value={signUpData?.username}
             onChange={(e) =>
               setSignUpData({ ...signUpData, username: e.target.value })
@@ -84,7 +98,7 @@ export const Signup = () => {
               className="auth-input"
               required
               type={passwordIsVisible ? "text" : "password"}
-              placeholder="password"
+              placeholder="Password"
               value={signUpData?.password}
               onChange={(e) =>
                 setSignUpData({ ...signUpData, password: e.target.value })
@@ -108,7 +122,7 @@ export const Signup = () => {
             <input
               className="auth-input"
               type={confirmPasswordVisible ? "text" : "password"}
-              placeholder="confirm password"
+              placeholder="Confirm Password"
               required
               onChange={(e) =>
                 setSignUpData({
