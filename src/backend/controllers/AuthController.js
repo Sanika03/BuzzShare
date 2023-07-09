@@ -15,7 +15,7 @@ const sign = require("jwt-encode");
  * */
 
 export const signupHandler = function (schema, request) {
-  const { username, password, ...rest } = JSON.parse(request.requestBody);
+  const { username: {firstName, lastName, username, password}, ...rest } = JSON.parse(request.requestBody);
   try {
     // check if username already exists
     const foundUser = schema.users.findBy({ username: username });
@@ -34,10 +34,17 @@ export const signupHandler = function (schema, request) {
       _id,
       createdAt: formatDate(),
       updatedAt: formatDate(),
-      username,
+      firstName, 
+      lastName,
       password,
-      ...rest,
+      username,
+      profileAvatar: "https://res.cloudinary.com/dnagcmyka/image/upload/v1688809154/default-profile_zj9su8.jpg  ",
+      bio: "",
+      website: "",
       bookmarks: [],
+      followers: [],
+      following: [],
+      ...rest
     };
     const createdUser = schema.users.create(newUser);
     const encodedToken = sign(
