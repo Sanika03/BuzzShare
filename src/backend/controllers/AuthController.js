@@ -15,7 +15,7 @@ const sign = require("jwt-encode");
  * */
 
 export const signupHandler = function (schema, request) {
-  const { username: {firstName, lastName, username, password}, ...rest } = JSON.parse(request.requestBody);
+  const { firstName, lastName, username, password, ...rest } = JSON.parse(request.requestBody);
   try {
     // check if username already exists
     const foundUser = schema.users.findBy({ username: username });
