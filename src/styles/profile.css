@@ -6,6 +6,7 @@
     width: 47%;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
     border-left: 1px solid white;
     border-right: 1px solid white;
 }
