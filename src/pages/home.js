@@ -35,11 +35,11 @@ export const Home = () => {
       } else if (selectedOption === "Oldest") {
           filteredPosts.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
       }
-      return filteredPosts.map((post) => (
+      return filteredPosts.length > 0 ? filteredPosts.map((post) => (
           <div className="posts-container" key={post._id}>
               <Post post={post} />
           </div>
-      ));
+      )) : <p className="bold center">No posts</p>;
   };
 
   return (
