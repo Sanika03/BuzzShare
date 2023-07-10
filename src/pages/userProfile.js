@@ -79,7 +79,7 @@ export const UserProfile = () => {
     )
 
     const getUserPosts = () => <div className="user-posts-container">
-        {userPosts.length > 0 ? userPosts.map((post) => <Post post={post}/>) : <h3 className="center">No posts to show</h3>}
+        {userPosts.length > 0 ? userPosts.map((post) => <Post post={post} key={post._id}/>) : <h3 className="center">No posts to show</h3>}
     </div>
 
     useEffect(() => {
