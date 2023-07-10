@@ -116,7 +116,6 @@ export const Post = ({ post }) => {
       <div
         className="individual-post-container"
         key={_id}
-        onClick={() => navigate(`/post/${_id}`)}
       >
         <div className="horizontal no-gap">
           <img
@@ -189,9 +188,6 @@ export const Post = ({ post }) => {
             <FontAwesomeIcon
               icon={faComment}
               className="post-action-icon"
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
             />
             <span className="post-action-count">{comments.length}</span>
           </div>
