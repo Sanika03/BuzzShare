@@ -7,7 +7,7 @@ const UserContext = createContext();
 const UserProvider = ({children}) => {
     const [ users, setUsers ] = useState([]);
     const [ bookmarks, setBookmarks ] = useState([]);
-    const { token, currUser, setCurrUser } = useAuth();
+    const { token, setCurrUser } = useAuth();
 
     const getUserHandler = async () => {
         try {
