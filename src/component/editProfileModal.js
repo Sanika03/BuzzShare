@@ -29,8 +29,6 @@ export const EditProfileModal = ({user, editModalOpen, setEditModalOpen}) => {
         setEditModalOpen(false);
     };
 
-    const isValid = () => profileAvatar.length > 0 && firstName.length > 0 && lastName.length > 0;
-
     return (
         <div onClick={(e) => { e.stopPropagation() }}>
             <Modal
@@ -47,7 +45,7 @@ export const EditProfileModal = ({user, editModalOpen, setEditModalOpen}) => {
                             <FontAwesomeIcon icon={faXmark} className="cancel-btn" onClick={handleCancel}/>
                             <p className="text">Edit Profile</p>
                         </div>
-                        <button type="submit" className="form-btn save-btn" disabled={isValid() ? false : true }>Save</button>
+                        <button type="submit" className="form-btn save-btn">Save</button>
                     </div>
                     <div className="inputs-container">
                         <img className="profile-avatar-edit" src={profileAvatar} alt="Profile Avatar"/>
