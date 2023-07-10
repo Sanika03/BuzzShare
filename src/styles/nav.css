@@ -75,6 +75,7 @@
 
 .user-details-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   padding: 0 0.5rem;  
 }
@@ -86,7 +87,7 @@
 
 .user-details {
   margin: 0;
-  width: max-content;
+  width: 10rem;
 }
 
 .user-details-username {
