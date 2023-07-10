@@ -108,9 +108,9 @@ const UserProvider = ({children}) => {
                 setUsers(prevUsers => {
                     return prevUsers.map(curr => {
                         if (curr.username === user.username) {
-                            return user; // Replace the user with the matching username
+                            return user;
                         } else {
-                            return curr; // Keep the original user if the usernames don't match
+                            return curr;
                         }
                     });
                 });
