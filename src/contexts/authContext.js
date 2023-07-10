@@ -33,12 +33,12 @@ const AuthProvider = ({ children }) => {
     setCurrUser(null);
   };
 
-  const signupHandler = async (username, password, name) => {
+  const signupHandler = async (signUpData) => {
     try {
       const {
         data: { createdUser, encodedToken },
         status,
-      } = await signUpService({ username, password, name });
+      } = await signUpService(signUpData);
       if (status === 200 || status === 201) {
         localStorage.setItem(
           'loginItems',
