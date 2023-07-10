@@ -36,7 +36,7 @@ export const Home = () => {
           filteredPosts.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
       }
       return filteredPosts.map((post) => (
-          <div className="posts-container">
+          <div className="posts-container" key={post._id}>
               <Post post={post} />
           </div>
       ));
