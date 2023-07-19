@@ -5,7 +5,7 @@ import { useAuth } from "./authContext";
 const UserContext = createContext();
 
 const UserProvider = ({children}) => {
-    const [ users, setUsers ] = useState([]);
+    const { users, setUsers } = useAuth();
     const [ bookmarks, setBookmarks ] = useState([]);
     const { token, setCurrUser } = useAuth();
 
