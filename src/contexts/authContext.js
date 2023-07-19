@@ -7,6 +7,7 @@ const AuthProvider = ({ children }) => {
   const localStorageToken = JSON.parse(localStorage.getItem('loginItems'));
   const [token, setToken] = useState(localStorageToken?.token);
   const [currUser, setCurrUser] = useState(localStorageToken?.user);
+  const [ users, setUsers ] = useState([]);
 
   const loginHandler = async (loginData) => {
     try {
@@ -46,6 +47,7 @@ const AuthProvider = ({ children }) => {
         );
         setCurrUser(createdUser);
         setToken(encodedToken);
+        setUsers((prevUsers) => [...prevUsers, createdUser]);
       }
     } catch (err) {
       console.log(err);
@@ -54,7 +56,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ token, loginHandler, currUser, setCurrUser, signupHandler, logoutHandler  }}
+      value={{ token, loginHandler, currUser, setCurrUser, signupHandler, logoutHandler, users, setUsers }}
     >
       {children}
     </AuthContext.Provider>
