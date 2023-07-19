@@ -73,11 +73,11 @@
     width: 15.4rem;
     max-height: 10rem;
     overflow-y: auto;
-    margin-top: -28rem;
     margin-left: 1.5rem;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     z-index: 1;
+    top: -14rem;
 }
 
 #searched-users-container::-webkit-scrollbar {
