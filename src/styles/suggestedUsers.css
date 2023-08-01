@@ -3,6 +3,13 @@
     padding: 1rem 1.5rem;
     margin: 1rem 0 1rem 1.5rem;
     border-radius: 0.5rem;
+    max-height: 74vh;
+    overflow-y: auto;
+}
+
+#s-users-container::-webkit-scrollbar-thumb {
+    background: rgb(175, 175, 175);
+    border-radius: 0.25rem;
 }
 
 #single-s-user-container {
@@ -80,15 +87,15 @@
     top: -14rem;
 }
 
-#searched-users-container::-webkit-scrollbar {
+#searched-users-container::-webkit-scrollbar, #s-users-container::-webkit-scrollbar {
   width: 0.4rem;
 }
 
-#searched-users-container::-webkit-scrollbar-track {
+#searched-users-container::-webkit-scrollbar-track, #s-users-container::-webkit-scrollbar-track {
   background: transparent;
 }
 
-#searched-users-container::-webkit-scrollbar-thumb {
+#searched-users-container::-webkit-scrollbar-thumb{
   background: rgba(0, 0, 0, 0.3);
   border-radius: 0.25rem;
 }
