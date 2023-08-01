@@ -75,16 +75,14 @@
 #searched-users-container {
     background-color: #98c1d9;
     color: black;
-    position: relative;
-    height: max-content;
+    position: fixed;
     width: 15.4rem;
     max-height: 10rem;
     overflow-y: auto;
     margin-left: 1.5rem;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    z-index: 1;
-    top: -14rem;
+    top: 4.5rem;
 }
 
 #searched-users-container::-webkit-scrollbar, #s-users-container::-webkit-scrollbar {
