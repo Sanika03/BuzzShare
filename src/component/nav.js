@@ -49,7 +49,7 @@ export const Nav = () => {
     <NavLink to={`/profile/${user?.username}`} className="nav-link" style={({ isActive }) => (isActive ? activeStyle : undefined)}>
       <img src={user?.profileAvatar} alt="User Avatar" className="user-avatar"/>
       <div className="user-details-container">
-        <p className="user-details">{user?.firstName} {user?.lastName}</p>
+        <p className="user-details max">{user?.firstName} {user?.lastName}</p>
         <p className="user-details-username">@{user?.username}</p>
       </div>
     </NavLink>
