@@ -77,7 +77,7 @@ export const NewPost = () => {
                     accept="image/*"
                     onChange={handleFileInputChange}
                 />
-                <button type="submit" className="light-btn" disabled={input || image ? false : true }>
+                <button type="submit" className="light-btn" disabled={input || image ? false : true } style={{cursor: input || image ? "pointer" : "not-allowed"}}>
                     Post
                 </button>
                 </div>
