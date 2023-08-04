@@ -7,6 +7,7 @@ const UserContext = createContext();
 const UserProvider = ({children}) => {
     const { users, setUsers } = useAuth();
     const [ bookmarks, setBookmarks ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState(true);
     const { token, setCurrUser } = useAuth();
 
     const getUserHandler = async () => {
@@ -26,6 +27,7 @@ const UserProvider = ({children}) => {
             const {data: { bookmarks }, status} = await getBookmarkService(token);
             if(status === 200) {
                 setBookmarks(bookmarks);
+                setIsLoading(false);
             }  
         }
         catch (e) {
