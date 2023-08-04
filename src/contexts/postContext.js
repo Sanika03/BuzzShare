@@ -76,7 +76,10 @@ const PostProvider = ({children}) => {
             const {data: { posts }, status} = await deletePostService({_id, token});
             if(status === 201) {
                 setPosts(posts);
-                removeBookmarkHandler(token, _id);
+                if(userPosts.some((post) => post._id === _id)) {
+                    const upadtedUserPosts = userPosts.filter((post) => post._id !== _id);
+                    setUserPosts(upadtedUserPosts)
+                }
             }
         }
         catch (e) {
