@@ -5,8 +5,9 @@ import { useUser } from "./userContext";
 const PostContext = createContext();
 
 const PostProvider = ({children}) => {
-    const [ postData, setPosts ] = useState([]);
+    const [postData, setPosts] = useState([]);
     const [userPosts, setUserPosts] = useState([]);
+    const [isLoading, setIsLoading] = useState({userPosts: true, posts: true});
     const [selectedOption, setSelectedOption] = useState("Latest");
     const { removeBookmarkHandler } = useUser();
 
@@ -15,6 +16,7 @@ const PostProvider = ({children}) => {
           const { data: { posts }, status } = await getAllPostsService();
           if (status === 200) {
             setPosts(posts);
+            setIsLoading({...isLoading, posts: false});
           }
         } catch (e) {
           console.error(e);
@@ -26,6 +28,7 @@ const PostProvider = ({children}) => {
             const {data: {posts}, status} = await getSingleUserPostsService(username);
             if (status === 200) {
                 setUserPosts(posts);
+                setIsLoading({...isLoading, userPosts: false});
             }
         } catch (e) {
             console.error(e);
@@ -98,7 +101,7 @@ const PostProvider = ({children}) => {
       }, [selectedOption]);
 
     return (
-        <PostContext.Provider value={{ postData, addPostHandler, selectedOption, setSelectedOption, likePostHandler, dislikePostHandler, deletePostHandler, editPostHandler, getUserPostsHandler, userPosts }}>
+        <PostContext.Provider value={{ postData, addPostHandler, selectedOption, setSelectedOption, likePostHandler, dislikePostHandler, deletePostHandler, editPostHandler, getUserPostsHandler, userPosts, isLoading }}>
             {children}
         </PostContext.Provider>
     )
