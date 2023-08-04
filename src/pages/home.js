@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { Nav } from "../component/nav";
 import { SuggestedUsers } from "../component/suggestedUsers";
@@ -9,9 +9,10 @@ import { Post } from "../component/post";
 import "../styles/home.css";
 import { usePost } from "../contexts/postContext";
 import { useAuth } from "../contexts/authContext";
+import { Loader } from "../component/loader";
 
 export const Home = () => {
-  const { postData, selectedOption } = usePost();
+  const { postData, selectedOption, isLoading } = usePost();
   const { currUser } = useAuth();
 
   const getTitle = () => (
@@ -46,10 +47,10 @@ export const Home = () => {
       <div className="home-page">
           <Nav />
           <div className="home-container">
-              {getTitle()}
-              <NewPost />
-              <SortPosts />
-                {postData && getPosts()}
+                {getTitle()}
+                <NewPost />
+                <SortPosts />
+                {isLoading.posts ? <Loader/> : getPosts()}
           </div>
           <SuggestedUsers />
       </div>

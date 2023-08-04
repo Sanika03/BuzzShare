@@ -1,3 +1,4 @@
+import { Loader } from "../component/loader";
 import { Nav } from "../component/nav";
 import { Post } from "../component/post";
 import { SuggestedUsers } from "../component/suggestedUsers";
@@ -6,7 +7,7 @@ import { usePost } from "../contexts/postContext";
 import "../styles/explore.css";
 
 export const Explore = () => {
-    const { postData } = usePost();
+    const { postData, isLoading } = usePost();
 
     const getTitle = () => (
         <div className="title-container">
@@ -26,7 +27,7 @@ export const Explore = () => {
             <Nav />
             <div className="explore-container">
                 {getTitle()}
-                {getExplorePosts()}
+                {isLoading.posts ? <Loader/> : getExplorePosts()}
             </div>
             <SuggestedUsers />
         </div>
