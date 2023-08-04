@@ -11,8 +11,7 @@ import { useAuth } from '../contexts/authContext';
 export const EditModal = ({ individualPost, editModalOpen, setEditModalOpen, setOptionsOpen }) => {
     const { editPostHandler, postData } = usePost();
     const { token } = useAuth();
-    const post = postData?.find((post) => post._id === individualPost._id)
-    const { profileAvatar, content, postImage } = post;
+    const { profileAvatar, content, postImage } = individualPost;
     const [inputValue, setInputValue] = useState(content);
     const [inputImage, setInputImage] = useState(postImage);
     const fileInputRef = useRef(null);
@@ -25,7 +24,7 @@ export const EditModal = ({ individualPost, editModalOpen, setEditModalOpen, set
         e.preventDefault(); 
         setEditModalOpen(false);
         setOptionsOpen(false);
-        editPostHandler({token, postImage: inputImage, post, input: inputValue});
+        editPostHandler({token, postImage: inputImage, individualPost, input: inputValue});
     };
 
     const handleCancel = (e) => {
