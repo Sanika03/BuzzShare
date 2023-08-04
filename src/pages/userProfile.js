@@ -9,11 +9,12 @@ import { useParams } from "react-router";
 import { useUser } from "../contexts/userContext";
 import { useAuth } from "../contexts/authContext";
 import { EditProfileModal } from "../component/editProfileModal";
+import { Loader } from "../component/loader";
 
 export const UserProfile = () => {
     const { username } = useParams();
     const [ editModalOpen, setEditModalOpen ] = useState(false);
-    const { getUserPostsHandler, userPosts } = usePost();
+    const { getUserPostsHandler, userPosts, isLoading } = usePost();
     const { users, followUserHandler, unfollowUserHandler } = useUser(); 
     const { currUser, token } = useAuth(); 
 
@@ -92,7 +93,7 @@ export const UserProfile = () => {
             <div className="profile-container">
                 {getTitle()}
                 {getUserDetails()}
-                {getUserPosts()}
+                {isLoading.userPosts ? <Loader/> : getUserPosts()}
                 <EditProfileModal user={user} editModalOpen={editModalOpen} setEditModalOpen={setEditModalOpen} />
             </div>
             <SuggestedUsers />
