@@ -86,7 +86,7 @@
     overflow-y: auto;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    top: 4.5rem;
+    top: 5.5rem;
 }
 
 #searched-users-container::-webkit-scrollbar, #s-users-container::-webkit-scrollbar {
