@@ -36,8 +36,8 @@ export const Post = ({ post }) => {
 
     const navigate = useNavigate();
 
-      const individualPost = postData?.find(({ _id }) => _id === post._id);
-      const { _id, content, postImage, firstName, lastName, username, profileAvatar, createdAt, likes, comments } = individualPost;
+    const individualPost = postData?.find(({ _id }) => _id === post._id);
+    const { _id, content, postImage, firstName, lastName, username, profileAvatar, createdAt, likes, comments } = individualPost;
 
     const formattedDate = new Date(createdAt).toLocaleDateString("en-US", {
       year: "numeric",
@@ -112,7 +112,7 @@ export const Post = ({ post }) => {
       }
     };
 
-    return (
+    return individualPost && (
       <div
         className="individual-post-container"
         key={_id}
@@ -189,7 +189,7 @@ export const Post = ({ post }) => {
               icon={faComment}
               className="post-action-icon"
             />
-            <span className="post-action-count">{comments.length}</span>
+            <span className="post-action-count">{comments?.length}</span>
           </div>
           {bookmarks?.some((post) => post._id === _id) ? (
             <FontAwesomeIcon
