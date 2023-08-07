@@ -10,10 +10,13 @@ import { useUser } from "../contexts/userContext";
 import { useAuth } from "../contexts/authContext";
 import { EditProfileModal } from "../component/editProfileModal";
 import { Loader } from "../component/loader";
+import { ConnectionsModal } from "../component/connectionsModal";
 
 export const UserProfile = () => {
     const { username } = useParams();
     const [ editModalOpen, setEditModalOpen ] = useState(false);
+    const [ connectionsModalOpen , setConnectionsModalOpen ] = useState(false);
+    const [ connections, setConnections ] = useState({value: [], type: ""});
     const { getUserPostsHandler, userPosts, isLoading } = usePost();
     const { users, followUserHandler, unfollowUserHandler } = useUser(); 
     const { currUser, token } = useAuth(); 
@@ -36,6 +39,11 @@ export const UserProfile = () => {
         }
         return false;
     };
+
+    const handleConnections = (value, type) => {
+        setConnectionsModalOpen(true);
+        setConnections({value, type});
+    }
 
     const getUserDetails = () => user && (
     <div className="profile-details-container">
@@ -63,8 +71,8 @@ export const UserProfile = () => {
                         )}
                     </div>
                     <div className="horizontal s-gap">
-                        <p className="text">{user.followers.length} <span className="user-details-username">Followers</span></p>
-                        <p className="text">{user.following.length} <span className="user-details-username">Following</span></p>
+                        <p className="text highlight" onClick={() => handleConnections(user.followers, "Followers")}>{user.followers.length} <span className="user-details-username">Followers</span></p>
+                        <p className="text highlight" onClick={() => handleConnections(user.following, "Following")}>{user.following.length} <span className="user-details-username">Following</span></p>
                     </div>
                 </div>
             </div>
@@ -95,6 +103,7 @@ export const UserProfile = () => {
                 {getUserDetails()}
                 {isLoading.userPosts ? <Loader/> : getUserPosts()}
                 <EditProfileModal user={user} editModalOpen={editModalOpen} setEditModalOpen={setEditModalOpen} />
+                <ConnectionsModal connectionsModalOpen={connectionsModalOpen} setConnectionsModalOpen={setConnectionsModalOpen} connections={connections}/>
             </div>
             <SuggestedUsers />
         </div>
