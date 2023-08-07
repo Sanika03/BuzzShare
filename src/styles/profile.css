@@ -67,6 +67,10 @@
     cursor: pointer;
 }
 
-.link:hover { 
+.highlight {
+    cursor: pointer;
+}
+
+.link:hover, .highlight:hover { 
     text-decoration: underline;
 }
