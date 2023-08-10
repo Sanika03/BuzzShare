@@ -31,7 +31,6 @@ export const Login = () => {
   const handleUserLogin = (e) => {
     toast.success('Successfully Logged In!');
     e.preventDefault();
-    console.log(loginData)
     loginHandler(loginData);
   };
 
