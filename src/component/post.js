@@ -123,6 +123,7 @@ export const Post = ({ post }) => {
       <div
         className="individual-post-container"
         key={_id}
+        onClick={() => navigate(`/post/${_id}`)}
       >
         <div className="horizontal no-gap">
           <img
