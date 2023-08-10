@@ -59,8 +59,7 @@ const dislikePostService = ({ _id, token }) => {
   );
 };
 
-const addCommentService = ({ postId, commentData, token }) => {
-  console.log("add comm service");
+const addCommentService = ( postId, commentData, token ) => {
   return axios.post(
     `/api/comments/add/${postId}`,
     { commentData },
