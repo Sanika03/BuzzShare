@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Nav } from "../component/nav";
 import { SuggestedUsers } from "../component/suggestedUsers";
@@ -22,6 +22,7 @@ export const Home = () => {
   );
 
   const followingUsernames = currUser?.following?.map((user) => user.username) || [];
+
   const homePosts = postData?.filter((post) => {
       return followingUsernames.includes(post.username) || post.username === currUser?.username;
   });
