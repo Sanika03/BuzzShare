@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { Nav } from "../component/nav";
 import { SuggestedUsers } from "../component/suggestedUsers";
