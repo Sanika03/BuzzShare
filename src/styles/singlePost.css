@@ -1,0 +1,52 @@
+.single-post-page {
+    display: flex;
+}
+
+.single-post-container {
+    width: 47%;
+    height: 100vh;
+    overflow-y: auto;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    background-color: #171e35;
+}
+
+.single-post-container::-webkit-scrollbar {
+    width: 0rem;
+  }
+  
+.single-post-container::-webkit-scrollbar-track, .post-input::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.light {
+    color: rgb(163, 160, 160);
+}
+
+.underline {
+    cursor: pointer;
+}
+
+.underline:hover {
+    text-decoration: underline;
+}
+
+.action-details {
+    padding: 1rem;
+    border-bottom: 1px solid white;
+}
+
+.distant {
+    padding: 1rem;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    margin-bottom: 3rem;
+}
+
+.comment-text {
+    width: 23.5rem;
+    background-color: #171e35;
+    border: none;
+    outline: #171e35;
+    color: white;
+}
