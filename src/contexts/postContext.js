@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { createPostService, getAllPostsService, likePostService, dislikePostService, deletePostService, editPostService, getSingleUserPostsService, addCommentService } from "../services/postServices"
-import { useUser } from "./userContext";
+import { createPostService, getAllPostsService, likePostService, dislikePostService, deletePostService, editPostService, getSingleUserPostsService, addCommentService } from "../services/postServices";
 
 const PostContext = createContext();
 
@@ -9,7 +8,6 @@ const PostProvider = ({children}) => {
     const [userPosts, setUserPosts] = useState([]);
     const [isLoading, setIsLoading] = useState({userPosts: true, posts: true});
     const [selectedOption, setSelectedOption] = useState("Latest");
-    const { removeBookmarkHandler } = useUser();
 
     const getPostsHandler = async () => {
         try {
