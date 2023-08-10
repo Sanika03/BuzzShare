@@ -229,6 +229,8 @@ export const Post = ({ post }) => {
         commentModalOpen={commentModalOpen} 
         setCommentModalOpen={setCommentModalOpen} 
         userProfile={currUser.profileAvatar}
+        postId={_id}
+        token={token}
         />
       </div>
     );
