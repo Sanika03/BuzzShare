@@ -38,6 +38,7 @@
 .save {
     background-color: #98c1d9;
     margin-top: 0.2rem;
+    cursor: pointer;
 }
 
 .cancel {
@@ -45,4 +46,5 @@
     background-color: #1d2643;
     color: white;
     margin-top: 0.2rem;
+    cursor: pointer;
 }
