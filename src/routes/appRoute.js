@@ -1,12 +1,13 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
 // pages
-import  { Home }  from "../pages/home";
+import { Home }  from "../pages/home";
 import { Explore } from "../pages/explore";
-import  { Bookmark } from "../pages/bookmark";
+import { Bookmark } from "../pages/bookmark";
 import { UserProfile } from "../pages/userProfile";
 import { Login } from "../pages/auth/login";
 import { Signup } from "../pages/auth/signup";
+import { SinglePost } from "../pages/singlePost";
 
 // components
 import { PrivateRoute } from "./privateRoute";
@@ -23,6 +24,7 @@ export const AppRoutes = () => {
           <Route path="/explore" element={<PrivateRoute><Explore /></PrivateRoute>} />
           <Route path="/bookmarks" element={<PrivateRoute><Bookmark /></PrivateRoute>} />
           <Route path="/profile/:username" element={<PrivateRoute><UserProfile /></PrivateRoute>} />
+          <Route path="/post/:_id" element={<PrivateRoute><SinglePost /></PrivateRoute>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
