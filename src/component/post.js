@@ -21,10 +21,12 @@ import { useUser } from "../contexts/userContext";
 
 import "../styles/post.css";
 import { EditModal } from "./editPostModal";
+import { CommentModal } from "./commentModal";
 
 export const Post = ({ post }) => {
     const [optionsOpen, setOptionsOpen] = useState(false);
     const [editModalOpen, setEditModalOpen] = useState(false);
+    const [commentModalOpen, setCommentModalOpen] = useState(false);
 
     const { postData, likePostHandler, dislikePostHandler, deletePostHandler } = usePost();
     const {
@@ -82,6 +84,11 @@ export const Post = ({ post }) => {
       deletePostHandler({ _id, token });
       setOptionsOpen(false);
     };
+
+    const handleComment = (e) => {
+      e.stopPropagation();
+      setCommentModalOpen(true);
+    }
 
     const getPostActionBox = () => {
       if (currUser.username === username) {
@@ -188,6 +195,7 @@ export const Post = ({ post }) => {
             <FontAwesomeIcon
               icon={faComment}
               className="post-action-icon"
+              onClick={(e) => handleComment(e)}
             />
             <span className="post-action-count">{comments?.length}</span>
           </div>
@@ -215,7 +223,13 @@ export const Post = ({ post }) => {
         individualPost={individualPost}
         editModalOpen={editModalOpen}
         setEditModalOpen={setEditModalOpen}
-        setOptionsOpen={setOptionsOpen} />
+        setOptionsOpen={setOptionsOpen}
+        />
+        <CommentModal 
+        commentModalOpen={commentModalOpen} 
+        setCommentModalOpen={setCommentModalOpen} 
+        userProfile={currUser.profileAvatar}
+        />
       </div>
     );
 };
