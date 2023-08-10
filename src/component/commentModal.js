@@ -2,9 +2,11 @@ import Modal from 'react-modal';
 
 import "../styles/commentModal.css";
 import { useState } from 'react';
+import { usePost } from '../contexts/postContext';
 
-export const CommentModal = ({commentModalOpen, setCommentModalOpen, userProfile}) => {
+export const CommentModal = ({commentModalOpen, setCommentModalOpen, userProfile, postId, token}) => {
     const [comment, setComment] = useState("");
+    const { addCommentHandler } = usePost();
 
     const handleCancel = () => {
         setCommentModalOpen(false);
@@ -12,7 +14,7 @@ export const CommentModal = ({commentModalOpen, setCommentModalOpen, userProfile
     }
 
     const handleSave = () => {
-        console.log(comment);
+        addCommentHandler({postId, commentData: comment, token})
         setComment("");
         setCommentModalOpen(false);
     }
