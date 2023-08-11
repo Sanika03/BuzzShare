@@ -40,7 +40,6 @@
     padding: 1rem;
     justify-content: space-between;
     border-bottom: 1px solid white;
-    margin-bottom: 3rem;
 }
 
 .comment-text {
@@ -49,4 +48,13 @@
     border: none;
     outline: #171e35;
     color: white;
+}
+
+.comment-box {
+    padding: 1rem;
+    border-bottom: 1px solid white;
+}
+
+.comment {
+    padding-left: 3.5rem;
 }
