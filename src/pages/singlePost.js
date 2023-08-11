@@ -30,7 +30,7 @@ export const SinglePost = () => {
         setComment("");
     }
 
-    const getCommentBox = () => <div className="comment-container">
+    const getAddCommentBox = () => <div className="comment-container">
         <div className="horizontal distant"> 
             <div className="horizontal">
                 <img
@@ -54,7 +54,7 @@ export const SinglePost = () => {
                     {likes?.likeCount > 0 && <p className="text underline">{likes.likeCount} <span className="light">likes</span></p>}
                     {comments?.length > 0 && <p className="text">{comments.length} <span className="light">{comments.length > 1 ? "comments" : "comment"}</span></p>}
                 </div>
-                {getCommentBox()}
+                {getAddCommentBox()}
             </>
         )
     }
