@@ -1,4 +1,4 @@
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 
 import { usePost } from "../contexts/postContext";
 import { Nav } from "../component/nav";
@@ -16,10 +16,11 @@ export const SinglePost = () => {
     const { token } = useAuth();
     const [comment, setComment] = useState("");
 
+    const navigate = useNavigate();
+
     const singlePost = postData.find((curr) => curr._id === _id) || {};
 
     const { likes, comments, profileAvatar } = singlePost;
-    console.log(singlePost)
     
     const getTitle = () => <div className="title-container">
         <p className="text left">Post</p>
@@ -30,7 +31,16 @@ export const SinglePost = () => {
         setComment("");
     }
 
-    const getAddCommentBox = () => <div className="comment-container">
+    const formattedDate = (createdAt) => {
+        const newDate = new Date(createdAt).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
+        return newDate;
+    }
+
+    const getAddCommentBox = () => <>
         <div className="horizontal distant"> 
             <div className="horizontal">
                 <img
@@ -44,6 +54,34 @@ export const SinglePost = () => {
                 Reply
             </button>
         </div>
+    </>
+
+    const getComment = ({_id, username, profileAvatar, firstName, lastName, createdAt, comment}) => 
+    <div className="comment-box">
+        <div className="horizontal no-gap" key={_id}>
+            <img
+            src={profileAvatar}
+            alt="User Avatar"
+            className="user-avatar"
+            onClick={() => navigate(`/profile/${username}`)}
+            />
+            <div className="user-details-container">
+                <div className="horizontal last-right">
+                    <p className="user-details" onClick={() => navigate(`/profile/${username}`)}>
+                    {firstName} {lastName}
+                    </p>
+                    <span className="date">·</span>
+                    <p className="text date">{formattedDate(createdAt)}</p>
+                </div>
+                <p
+                    className="user-details-username"
+                    onClick={() => navigate(`/profile/${username}`)}
+                >
+                    @{username}
+                </p>
+            </div>
+        </div>
+        <p className="comment">{comment}</p>
     </div>
 
     const getPostDetails = () => {
@@ -55,6 +93,7 @@ export const SinglePost = () => {
                     {comments?.length > 0 && <p className="text">{comments.length} <span className="light">{comments.length > 1 ? "comments" : "comment"}</span></p>}
                 </div>
                 {getAddCommentBox()}
+                {comments.map((comm) => getComment(comm))}
             </>
         )
     }
