@@ -60,6 +60,10 @@
     color: white;
 }
 
+.upload-button:hover { 
+    opacity: 0.5;
+}
+
 .posted-media {
     position: relative;
 }

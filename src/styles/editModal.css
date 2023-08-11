@@ -41,6 +41,10 @@
     cursor: pointer;
 }
 
+.save:hover, .cancel:hover { 
+    opacity: 0.5;
+}
+
 .cancel {
     border: 1.5px solid #98c1d9;
     background-color: #1d2643;
