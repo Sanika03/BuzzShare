@@ -55,9 +55,10 @@ export const addPostCommentHandler = function (schema, request) {
    
     const comment = {
       _id: uuid(),
-      commentData,
+      comment: commentData,
       username: user.username,
-      fullName: user.fullName,
+      firstName: user.firstName,
+      lastName: user.lastName,
       profileAvatar: user.profileAvatar,
       votes: { upvotedBy: [], downvotedBy: [] },
       createdAt: formatDate(),
@@ -113,7 +114,7 @@ export const editPostCommentHandler = function (schema, request) {
     }
     post.comments[commentIndex] = {
       ...post.comments[commentIndex],
-      ...commentData,
+      comment:{...commentData},
       updatedAt: formatDate(),
     };
     this.db.posts.update({ _id: postId }, post);
